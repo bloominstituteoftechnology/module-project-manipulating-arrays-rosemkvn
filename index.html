@@ -56,7 +56,9 @@ if (dum>=13){
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
       
-        
+        for (let i =0; i<str.length; i++){
+          return str.replace(/[aeiou]/g, '')
+        }
       }
 
     
@@ -69,9 +71,22 @@ if (dum>=13){
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
     function sumNumsWhile(numbers) {
+      let i = 0 
+      let sum=0 
+    while(i < numbers.length){
+       if(typeof numbers[i] == 'number'){
+           sum+=numbers[i] 
+
+}
+      if (sum >= 13){
+     return "I'm too superstitious!"
+}
+
+i++
+       }
   
 
-
+return sum
   
     }
 
@@ -93,9 +108,20 @@ if (dum>=13){
     // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
     // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
     function fightMonsters(lifePoints) {
-      
+   
+      let round=0
+        while (lifePoints>0){
+         lifePoints-=round
+
+          if(lifePoints <= 0){
+            return `You died in round ${round}`
+          }
+          round++
+
+          
+        }
+   
     }
-      console.log(fightMonsters(8))
 
     // 👉 CHALLENGE 5
     // 🧠 The function findEvenNums takes an array of integers as its argument.
@@ -104,8 +130,19 @@ if (dum>=13){
     // findEvenNums([0, 1, 2, 3, 4]) // should return [0, 2, 4]
     // ❗ Notes:
     // 🧠 Use any kind of loop you'd like and the push method to populate the array of even numbers.
-    function findEvenNums() {
+    function findEvenNums(numrs) {
+      let evennumrs=[]
 
+     for(let i=0; i<numrs.length; i++){
+      if (numrs[i]% 2 ==0){
+        evennumrs.push(numrs[i])
+      }
+     }
+
+
+
+
+      return evennumrs
     }
 
     // 👉 CHALLENGE 6
@@ -115,8 +152,20 @@ if (dum>=13){
     // 🧠 Ages in the subarrays should appear in the same order they appeared in the original array.
     // 🧠 Examples of usage:
     // separateAges([31, 12, 25, 65, 84, 20]) // should return [[12, 20], [31, 25, 65, 84]]
-    function separateAges() {
+    function separateAges(ages) {
+      newages=[[], []]
 
+      for (let i=0; i<ages.length; i ++){
+        
+        if (ages[i]<21){
+          newages[0].push(ages[i])
+        }
+        if(ages[i]>=21){
+          newages[1].push(ages[i])
+        }
+        
+        }
+      return newages
     }
 
     // 👉 CHALLENGE 7
@@ -137,8 +186,8 @@ if (dum>=13){
     // nestedLoops(['hello', 'goodbye']) // should return ['hEllO', 'gOOdbyE']
     // ❗ Notes:
     // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
-    function nestedLoops() {
-
+    function nestedLoops(strings) {
+let newstring=[]
     }
 
     // 👉 CHALLENGE 9
