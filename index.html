@@ -175,10 +175,17 @@ return sum
     // 🧠 The "tail" prop contains an array holding the elements of the array after the first one.
     // 🧠 Examples of usage:
     // headAndTail([1, 2, 3]) // should return { head: 1, tail: [2, 3] }
-    function headAndTail() {
+    function headAndTail(arr){
+     head = arr.shift();
+     tail = arr.slice();
 
+  return {
+    head: head,
+    tail: tail,
+  };
     }
 
+    
     // 👉 CHALLENGE 8
     // 🧠 The function nestedLoops takes an array of strings as its argument.
     // 🧠 It returns a new array of strings which are the same as the original ones except that the vowels are capitalized.
@@ -187,8 +194,14 @@ return sum
     // ❗ Notes:
     // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
     function nestedLoops(strings) {
-let newstring=[]
-    }
+      for (let i = 0; i < strings.length; i++) {
+    strings[i] = strings[i].replace(/[aeiou]/gi, (char) => char.toUpperCase())
+     }
+
+    return strings;
+}
+    
+
 
     // 👉 CHALLENGE 9
     // 🧠 The function crazyTrimmer takes an array as its argument.
@@ -201,8 +214,17 @@ let newstring=[]
     // 🧠 Practice using pop and slice.
     // 🧠 Note that pop modifies the original array in place and returns the "popped" element, whereas slice gives us a brand new array.
     function crazyTrimmer(arr) {
+      if (arr.length % 2 === 0) {
+          arr.pop(); 
+     } else {
+          arr = arr.slice(1, -1); 
+     }
 
-    }
+    return arr;
+     }
+
+
+    
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
